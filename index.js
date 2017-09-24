@@ -1,26 +1,29 @@
+var animal = 'dog'
+
+function myAnimal() {
+  return animal
 }
 
-  function yourAnimal() {
- +  var animal = "cat"
-    // How can we make sure that this function
-    // and the above function both pass?
-    // P.S.: You can't just hard-code 'cat' below
-    return animal
+function yourAnimal() {
+  // How can we make sure that this function
+  // and the above function both pass?
+  // P.S.: You can't just hard-code 'cat' below
+  var animal = 'cat'
+
+  return animal
+}
+
+function add2(n) {
+  const two = 2
+
+  return n + two
+}
+
+var funkyFunction = function() { // funkyFunction
+  return function() { // funkyFunction()
+    return "FUNKY!" // funkyFunction()()
   }
+}
 
-  function add2(n) {
- +  const two = 2
-    return n + two
-
-    // Feel free to move things around!
- -  const two = 2
- +
-  }
-
-  var funkyFunction = function() {
- @@ -26,4 +28,4 @@ var funkyFunction = function() {
-
-  // We want to set theFunk equal to "FUNKY!" using our funkyFunction.
-  // NOTE: you only need to modify the code below this line.
- -var theFunk = funkyFunction
- +var theFunk = funkyFunction()()
+// We want this to return "FUNKY!" -- how can we accomplish that?
+var theFunk = funkyFunction()()
